@@ -1,0 +1,544 @@
+{
+  "name": "Complete Rules",
+  "description": "完整策略：master_rules 母本 + catch-all deny，Silent Allow 和 Silent Deny 下效果一致",
+  "rules": [
+    {
+      "action": "allow",
+      "priority": "high",
+      "remote-domains": [
+        "tencent.com",
+        "mcp.exa.ai",
+        "api.telegram.org",
+        "registry.npmjs.org",
+        "rime.im",
+        "rime.github.io",
+        "api2.cursor.sh",
+        "play.googleapis.com",
+        "bybitsec.com",
+        "apne1-1002.sentinelone.net",
+        "get.sogou.com",
+        "larksuite.com",
+        "github.com",
+        "bitsvc.io",
+        "byops.io",
+        "bybit.com",
+        "bytick.com",
+        "bybitglobal.com",
+        "explorebybit.com",
+        "bynbc.com",
+        "bycbe.com",
+        "byapis.com",
+        "bybit.com.hk",
+        "bybittr.com",
+        "byhkbit.com",
+        "bybit-tr.com",
+        "bybit.ae",
+        "bybit.nl",
+        "bybit.kz",
+        "cccc.buzz",
+        "dmlevelupone.com",
+        "dmlevelupdash.com",
+        "dmlevelupplatform.com",
+        "bycustody.com",
+        "lixoperdavimuzonrak.com",
+        "zunafotekalimurcivo.com",
+        "bitapps.me",
+        "byd3c3.com",
+        "byabcde.com",
+        "bybdc6.com",
+        "bybit.biz",
+        "bybit.org",
+        "byffbb.com",
+        "byapps.net",
+        "bybit-global.com",
+        "bybitgum.com",
+        "bybit.global",
+        "bybitx.global",
+        "bybits.io",
+        "bybit.cloud",
+        "bybitgum.org",
+        "bybits.org",
+        "seabit.net",
+        "ng-dex.com",
+        "bbapi.net",
+        "byapis.net",
+        "bitapis.net",
+        "byapi.net",
+        "bitsapis.net",
+        "bitsapp.net",
+        "lovebybit.com",
+        "jbybit.com",
+        "cbybit.com",
+        "c-by-bit.com",
+        "cbybitapp.com",
+        "d-by-bit.com",
+        "dbybits.com",
+        "ebybit.net",
+        "fbybit.com",
+        "hbybit.net",
+        "h-by-bit.com",
+        "gbybit.net",
+        "g-by-bit.com",
+        "kbybit.com",
+        "i-by-bit.com",
+        "ibybit.net",
+        "fourbit.net",
+        "bitetea.com",
+        "biteoil.com",
+        "bitewater.net",
+        "bitetea.net",
+        "amlevelup.com",
+        "bitverse.zone",
+        "bybit-aws.com",
+        "bybit-ops.com",
+        "bybitcard.com",
+        "bybitcards.com",
+        "bycloud.org",
+        "bycsi.com",
+        "fassspay.com",
+        "fassweb3.com",
+        "ffbbbdc6d3c353211fe2ba39c9f744cd.com",
+        "ffe390afd658c19dcbf707e0597b846d.de",
+        "option.ffe390afd658c19dcbf707e0597b846d.de",
+        "teleport.network",
+        "yijin.io",
+        "pydev.com",
+        "byagsvc.com",
+        "amazonaws.com",
+        "akamai-access.com",
+        "byrisk.io",
+        "golang.org",
+        "googleapis.com",
+        "registry.ollama.ai",
+        "telemetry.nextjs.org",
+        "sheetaapi.wangsu.com",
+        "acroipm2.adobe.com",
+        "code-test.bydev.io",
+        "microsoft.com",
+        "cc-api-data.adobe.io",
+        "mainbf.com",
+        "opencode.ai",
+        "hashicorp.com",
+        "officeclient.microsoft.com",
+        "tencentcloudapi.com",
+        "ubuntu.com",
+        "registry.npmmirror.com",
+        "mirrors.cloud.tencent.com",
+        "terraform.io"
+      ],
+      "requiresTrustedSignatureForAnyProcess": false,
+      "enabled": true,
+      "notes": "白名单域名：所有进程（含未签名）可访问"
+    },
+    {
+      "action": "allow",
+      "ports": "443",
+      "remote-domains": [
+        "icloud-content.com",
+        "icloud.com"
+      ],
+      "notes": "iCloud 服务"
+    },
+    {
+      "action": "allow",
+      "remote-domains": [
+        "apple",
+        "apple-cloudkit.com",
+        "apple-mapkit.com",
+        "apple.com",
+        "apple.news",
+        "cdn-apple.com",
+        "mzstatic.com",
+        "pypi.org"
+      ],
+      "notes": "Apple 服务 + pypi"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "remote": "local-net",
+      "notes": "本地网络"
+    },
+    {
+      "action": "allow",
+      "direction": "incoming",
+      "protocol": "icmp",
+      "remote": "any",
+      "notes": "允许入站 ICMP"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "appGroup.macOS",
+      "remote": "any",
+      "notes": "macOS 系统进程组"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.2BUA8C4S2C/com.1password.1password",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.JQ525L2MZD/com.adobe.ARMDCHelper",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.6B676QFWFA/com.akamai.aztc.service",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.6B676QFWFA/com.akamai.aztc.service",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.N82YM748DZ/com.install4j.7318-9294-3757-1226.70",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "incoming",
+      "ports": "68",
+      "process": "identifier.APPLE/com.apple.configd",
+      "protocol": "udp",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.C489D5E8E8/EndPointClassifier",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.C489D5E8E8/EndPointClassifier",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.43AQ936H96/org.mozilla.firefox",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.C489D5E8E8/fpnpd",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.EQHXZ8M8AV/com.google.Chrome",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.EQHXZ8M8AV/com.google.GoogleUpdater",
+      "remote": "any"
+    },
+    {
+      "action": "deny",
+      "process": "identifier.ME7L72N3S3/com.zzd.XnipHelper",
+      "remote-domains": "appcenter.ms"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.H7V7XYVQ7D/com.googlecode.iterm2",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.483DWKW443/com.jamfsoftware.jamf",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.483DWKW443/com.jamfsoftware.jamf",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.483DWKW443/com.jamf.management.daemon",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.483DWKW443/com.jamf.management.daemon",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.483DWKW443/com.jamf.management.service",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.JBRN9C6V7T/com.larksuite.larkApp",
+      "direction": "both",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.MLZF7K7B5R/at.obdev.littlesnitch",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.MLZF7K7B5R/at.obdev.littlesnitch.networking",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.MLZF7K7B5R/at.obdev.littlesnitch.softwareupdate",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.mDNSResponder",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.APPLE/com.apple.mDNSResponder",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.ocspd",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.A2P9LX4JPN/com.operasoftware.Opera",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.A2P9LX4JPN/com.operasoftware.Installer.Opera",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.Safari",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Client",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Client",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Core",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Core",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/SecureLink_DP",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.S6NQ524Y5V/SecureLink_DP",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.483DWKW443/com.jamfsoftware.selfservice.mac",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4AYE5J54KN/com.sentinelone.sentineld",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.4AYE5J54KN/com.sentinelone.sentineld",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.YCKFLA6N72/com.nssurge.surge-mac",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.Terminal",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.trustd",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.UBF8T346G9/com.microsoft.VSCode",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.6B676QFWFA/wapptunneld",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.6B676QFWFA/wapptunneld",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.APPLE/com.apple.weather.widget",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.5A4RE8SF68/com.tencent.xinWeChat",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.722C4CPT89/DLPSecService_macos",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.YK4WKE5WAM/com.kingsoft.wpsoffice.mac",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "2ZEFAR8TH3/com.jetbrains.goland",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.QBMN2BBW3K/com.aliyun.wuying.osx",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/MonitorControl.app/Contents/MacOS/MonitorControl",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.H7UGFBUGV6/com.teamviewer.Daemon",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/GoLand.app/Contents/MacOS/goland",
+      "remote": "230.230.230.230"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.XZMH593AYG/com.talon-sec.Work",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/TeamViewer.app",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "/Users/my40140ml/.terraform.d/plugin-cache/*",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.MEWHFZ92DY/com.west2online.ClashX",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.2DC432GLL2/com.openai.atlas",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "remote-addresses": "10.18.*.*, 10.115.*.*, 10.23.*.*, 172.20.*.*, 192.168.*.*, 10.21.*.*, 44.216.202.239, 52.119.199.66, 54.239.16.72, 52.119.196.222",
+      "requiresTrustedSignatureForAnyProcess": false,
+      "notes": "内网 IP 白名单"
+    },
+    {
+      "action": "allow",
+      "process": "path.opt/homebrew/Cellar/lima/*/bin/limactl",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4AYE5J54KN/com.sentinelone.ranger",
+      "remote": "any",
+      "notes": "SentinelRanger (SentinelOne 网络扫描子进程)"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.4AYE5J54KN/com.sentinelone.sentineld-helper",
+      "remote": "any",
+      "notes": "sentineld_helper (SentinelOne 辅助进程)"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Agent",
+      "remote": "any",
+      "notes": "SecureLink Agent (网络探测子进程)"
+    },
+    {
+      "action": "allow",
+      "direction": "both",
+      "process": "identifier.S6NQ524Y5V/SecureLink_Agent",
+      "remote": "any"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/com.wangsu.securelink",
+      "remote": "any",
+      "notes": "SecureLink 主程序"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.S6NQ524Y5V/com.wangsu.securelink.helper",
+      "remote": "any",
+      "notes": "SecureLink Helper"
+    },
+    {
+      "action": "allow",
+      "direction": "incoming",
+      "remote": "any",
+      "notes": "入站不限制：Silent Allow 与 Silent Deny 效果一致"
+    },
+    {
+      "action": "deny",
+      "remote": "any",
+      "requiresTrustedSignatureForAnyProcess": false,
+      "notes": "兜底：拒绝所有未匹配的未签名进程出网"
+    }
+  ]
+}
